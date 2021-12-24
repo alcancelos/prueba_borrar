@@ -22,7 +22,7 @@ namespace Prueba_Borrar.Controllers
         // GET: Personas
         public async Task<IActionResult> Index()
         {
-            int a = 1;
+            
             return View(await _context.Persona.Include(x=>x.Categoria).ToListAsync());
         }
 
