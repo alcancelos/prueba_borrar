@@ -16,6 +16,7 @@ namespace Prueba_Borrar.Controllers
 
         public PersonasController(ApplicationDbContext context)
         {
+            int l = 2;
             _context = context;
         }
 
