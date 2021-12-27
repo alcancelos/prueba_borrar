@@ -323,7 +323,6 @@ C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Pr
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Prueba_Borrar.csproj.AssemblyReference.cache
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Prueba_Borrar.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Prueba_Borrar.AssemblyInfoInputs.cache
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Prueba_Borrar.AssemblyInfo.cs
@@ -434,3 +433,8 @@ C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Pr
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Personas\Details.cshtml.g.cs
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Personas\Edit.cshtml.g.cs
 C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Personas\Index.cshtml.g.cs
+C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Categorias\Create.cshtml.g.cs
+C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Categorias\Delete.cshtml.g.cs
+C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Categorias\Details.cshtml.g.cs
+C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Categorias\Edit.cshtml.g.cs
+C:\Users\Alex\OneDrive\Mis documentos\Visual Studio 2019\Proyectos Personales\Prueba_Borrar\Prueba_Borrar\obj\Debug\net5.0\Razor\Views\Categorias\Index.cshtml.g.cs

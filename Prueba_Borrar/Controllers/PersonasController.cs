@@ -48,7 +48,7 @@ namespace Prueba_Borrar.Controllers
         // GET: Personas/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "IdCategoria");
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "Nombre");
             return View();
         }
 
