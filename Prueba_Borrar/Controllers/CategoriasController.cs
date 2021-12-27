@@ -10,23 +10,22 @@ using Prueba_Borrar.Models;
 
 namespace Prueba_Borrar.Controllers
 {
-    public class PersonasController : Controller
+    public class CategoriasController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PersonasController(ApplicationDbContext context)
+        public CategoriasController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Personas
+        // GET: Categorias
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Persona.Include(p => p.Categoria);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Categoria.ToListAsync());
         }
 
-        // GET: Personas/Details/5
+        // GET: Categorias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace Prueba_Borrar.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
-                .Include(p => p.Categoria)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (persona == null)
+            var categoria = await _context.Categoria
+                .FirstOrDefaultAsync(m => m.IdCategoria == id);
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return View(persona);
+            return View(categoria);
         }
 
-        // GET: Personas/Create
+        // GET: Categorias/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "IdCategoria");
             return View();
         }
 
-        // POST: Personas/Create
+        // POST: Categorias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,IdCategoria")] Persona persona)
+        public async Task<IActionResult> Create([Bind("IdCategoria,Nombre")] Categoria categoria)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(persona);
+                _context.Add(categoria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "IdCategoria", persona.IdCategoria);
-            return View(persona);
+            return View(categoria);
         }
 
-        // GET: Personas/Edit/5
+        // GET: Categorias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace Prueba_Borrar.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona.FindAsync(id);
-            if (persona == null)
+            var categoria = await _context.Categoria.FindAsync(id);
+            if (categoria == null)
             {
                 return NotFound();
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "IdCategoria", persona.IdCategoria);
-            return View(persona);
+            return View(categoria);
         }
 
-        // POST: Personas/Edit/5
+        // POST: Categorias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,IdCategoria")] Persona persona)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCategoria,Nombre")] Categoria categoria)
         {
-            if (id != persona.Id)
+            if (id != categoria.IdCategoria)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace Prueba_Borrar.Controllers
             {
                 try
                 {
-                    _context.Update(persona);
+                    _context.Update(categoria);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonaExists(persona.Id))
+                    if (!CategoriaExists(categoria.IdCategoria))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace Prueba_Borrar.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "IdCategoria", "IdCategoria", persona.IdCategoria);
-            return View(persona);
+            return View(categoria);
         }
 
-        // GET: Personas/Delete/5
+        // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace Prueba_Borrar.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
-                .Include(p => p.Categoria)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (persona == null)
+            var categoria = await _context.Categoria
+                .FirstOrDefaultAsync(m => m.IdCategoria == id);
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return View(persona);
+            return View(categoria);
         }
 
-        // POST: Personas/Delete/5
+        // POST: Categorias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var persona = await _context.Persona.FindAsync(id);
-            _context.Persona.Remove(persona);
+            var categoria = await _context.Categoria.FindAsync(id);
+            _context.Categoria.Remove(categoria);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonaExists(int id)
+        private bool CategoriaExists(int id)
         {
-            return _context.Persona.Any(e => e.Id == id);
+            return _context.Categoria.Any(e => e.IdCategoria == id);
         }
     }
 }
